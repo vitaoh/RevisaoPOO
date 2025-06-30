@@ -1,5 +1,6 @@
-package simulado.sala;
+package simulado.sala.ex1;
 
+import simulado.sala.erro.ErroCritico;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 

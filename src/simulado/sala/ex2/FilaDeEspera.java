@@ -1,4 +1,4 @@
-package simulado.sala;
+package simulado.sala.ex2;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,12 +18,16 @@ public class FilaDeEspera {
         return fila.offer(p);
     }
 
-    public boolean remover(Pessoa p) {
-        if(fila.isEmpty() == false) {
+    public synchronized boolean remover() {
+        if(!fila.isEmpty()) {
             System.out.println(fila.poll());
             return true;
         }
-        return false; // 111111111111111111111
+        return false;
     }
 
+    @Override
+    public String toString() {
+        return fila.toString();
+    }
 }

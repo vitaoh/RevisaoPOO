@@ -1,10 +1,10 @@
-package simulado.sala;
+package simulado.sala.erro;
 
-public class ErroCritico extends Exception {
+public class ErroPassivo extends RuntimeException {
 
     private final String mensagem;
 
-    public ErroCritico(String mensagem) {
+    public ErroPassivo(String mensagem) {
         super(mensagem);
         this.mensagem = mensagem;
     }
@@ -17,4 +17,5 @@ public class ErroCritico extends Exception {
     public String toString() {
         return getMensagem();
     }
+
 }

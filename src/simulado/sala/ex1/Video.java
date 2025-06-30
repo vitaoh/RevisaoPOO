@@ -1,4 +1,6 @@
-package simulado.sala;
+package simulado.sala.ex1;
+
+import simulado.sala.erro.ErroPassivo;
 
 public class Video implements Comparable<Video> {
 

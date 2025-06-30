@@ -1,4 +1,6 @@
-package simulado.sala;
+package simulado.sala.ex2;
+
+import simulado.sala.erro.ErroPassivo;
 
 public class Pessoa {
     private String nome;
@@ -30,6 +32,9 @@ public class Pessoa {
             } else throw new ErroPassivo("O cpf está incorreto!");
         } else throw new ErroPassivo("O cpf não pode ser vazio!");
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return getNome() + " (" + getCpf() + ")";
+    }
 }

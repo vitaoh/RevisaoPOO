@@ -1,4 +1,4 @@
-package simulado.sala;
+package simulado.sala.ex1;
 
 import java.util.Comparator;
 
