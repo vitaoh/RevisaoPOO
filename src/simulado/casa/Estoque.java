@@ -2,21 +2,43 @@ package simulado.casa;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Estoque {
+
     Map<Produto, Integer> armazem;
 
     public Estoque() {
-        armazem = new HashMap<>() {};
+        armazem = new HashMap<>() {
+        };
     }
-    
-    public boolean adicionar(Produto p, int i) {
-        if(armazem.containsKey(p)) {
-            
-        }
-        else {
-            
+
+    public boolean adicionarQuantidade(Produto p, int i) {
+        if (armazem.containsKey(p)) {
+            int q = armazem.get(p);
+            armazem.put(p, q + i);
+            return true;
+        } else {
+            armazem.put(p, i);
+            return true;
         }
     }
-    
+
+    public boolean removerQuantidade(Produto p, int i) {
+        if (armazem.containsKey(p)) {
+            int q = armazem.get(p);
+            if (i >= q) {
+                armazem.remove(p);
+            } else {
+                armazem.put(p, q - i);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Stream<Produto> getStream() {
+        return armazem.keySet().stream();
+    }
 }

@@ -1,6 +1,6 @@
 package simulado.casa;
 
-public class Produto {
+public class Produto implements Comparable<Produto>{
 
     private String nome;
     private double preco;
@@ -59,10 +59,17 @@ public class Produto {
     private void setAnoFabricacao(int anoFabricacao) {
         this.anoFabricacao = anoFabricacao;
     }
+    
+    
 
     @Override
     public String toString() {
         return getNome() + " | R$"+ getPreco() + " | " + getCategoria() + " | " + getAnoFabricacao();
+    }
+
+    @Override
+    public int compareTo(Produto o) {
+        return o.getNome().compareTo(o.getNome());
     }
     
 }
