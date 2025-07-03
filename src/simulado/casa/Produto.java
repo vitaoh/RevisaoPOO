@@ -69,7 +69,7 @@ public class Produto implements Comparable<Produto>{
 
     @Override
     public int compareTo(Produto o) {
-        return o.getNome().compareTo(o.getNome());
+        return getNome().compareTo(o.getNome());
     }
     
 }

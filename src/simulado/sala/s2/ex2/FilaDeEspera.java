@@ -4,30 +4,34 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class FilaDeEspera {
-
-    Queue<Pessoa> fila;
+    
+    private Queue<Pessoa> fila;
 
     public FilaDeEspera() {
         fila = new LinkedList<>();
     }
-
-    public boolean adicionar(Pessoa p) {
-        if (fila.contains(p)) {
+    
+    public boolean adicionar(Pessoa pessoa) {
+        if( fila.contains(pessoa) ) {
             return false;
-        }
-        return fila.offer(p);
-    }
-
-    public synchronized boolean remover() {
-        if(!fila.isEmpty()) {
-            System.out.println(fila.poll());
+        } else {
+            fila.offer(pessoa);
             return true;
         }
-        return false;
+    }
+    
+    public synchronized boolean remover() {
+        if( fila.isEmpty() == false ) {
+            System.out.println( fila.poll() );
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public String toString() {
         return fila.toString();
     }
+    
 }
