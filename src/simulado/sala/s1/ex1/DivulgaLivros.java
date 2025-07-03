@@ -19,7 +19,8 @@ public class DivulgaLivros {
 
         System.out.println("Livros em ordem alfabetica");
 
-        biblioteca.getLivros()
+        biblioteca
+                .getLivros()
                 .keySet()
                 .stream()
                 .sorted()
@@ -29,7 +30,8 @@ public class DivulgaLivros {
 
         System.out.println("Livros lançados nos ultimos 5 anos");
 
-        biblioteca.getLivros()
+        biblioteca
+                .getLivros()
                 .keySet()
                 .stream()
                 .sorted()
@@ -40,7 +42,8 @@ public class DivulgaLivros {
 
         System.out.println("Livros que tenham a palavra Java");
 
-        biblioteca.getLivros()
+        biblioteca
+                .getLivros()
                 .keySet()
                 .stream()
                 .sorted()

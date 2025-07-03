@@ -22,8 +22,8 @@ public class AtendimentoBanco {
                 
                 fila.adicionar( new Pessoa("Mateus", "555.555.555-55") );
                 Thread.sleep(500);
-                
-                                
+                                                
+
             } catch(Exception ex) {
                 ex.printStackTrace();
             }            

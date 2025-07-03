@@ -1,6 +1,8 @@
-package simulado.casa;
+package simulado.casa.ex1;
 
-public class Produto implements Comparable<Produto>{
+import simulado.casa.erro.ErroLeve;
+
+public class Produto implements Comparable<Produto> {
 
     private String nome;
     private double preco;
@@ -57,19 +59,19 @@ public class Produto implements Comparable<Produto>{
     }
 
     private void setAnoFabricacao(int anoFabricacao) {
-        this.anoFabricacao = anoFabricacao;
+        if (anoFabricacao >= 2000) {
+            this.anoFabricacao = anoFabricacao;
+        } else throw new ErroLeve("Ano de fabricacao deve ser superior a 2000!");
     }
-    
-    
 
     @Override
     public String toString() {
-        return getNome() + " | R$"+ getPreco() + " | " + getCategoria() + " | " + getAnoFabricacao();
+        return getNome() + " | R$" + getPreco() + " | " + getCategoria() + " | " + getAnoFabricacao();
     }
 
     @Override
     public int compareTo(Produto o) {
         return getNome().compareTo(o.getNome());
     }
-    
+
 }

@@ -1,4 +1,4 @@
-package simulado.casa;
+package simulado.casa.erro;
 
 public class ErroLeve extends RuntimeException {
 

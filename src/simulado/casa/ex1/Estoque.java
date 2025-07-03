@@ -1,16 +1,14 @@
-package simulado.casa;
+package simulado.casa.ex1;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Stream;
 
 public class Estoque {
 
     Map<Produto, Integer> armazem;
 
     public Estoque() {
-        armazem = new HashMap<>() {
-        };
+        armazem = new HashMap<>();
     }
 
     public boolean adicionarQuantidade(Produto p, int i) {
@@ -38,7 +36,8 @@ public class Estoque {
         }
     }
 
-    public Stream<Produto> getStream() {
-        return armazem.keySet().stream();
+    public Map<Produto, Integer> getArmazem() {
+        return armazem;
     }
+    
 }
